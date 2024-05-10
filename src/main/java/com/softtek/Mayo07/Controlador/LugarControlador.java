@@ -3,6 +3,7 @@ package com.softtek.Mayo07.Controlador;
 import com.softtek.Mayo07.Modelo.Lugar;
 import com.softtek.Mayo07.Modelo.Producto;
 import com.softtek.Mayo07.Servicio.LugarServicio;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,12 +26,12 @@ public class LugarControlador {
     }
 
     @PostMapping
-    public Lugar crear(@RequestBody Lugar l){
+    public Lugar crear(@Valid @RequestBody Lugar l){
         return lugarServicio.crear(l);
     }
 
     @PutMapping
-    public Lugar modificar(@RequestBody Lugar l){
+    public Lugar modificar(@Valid @RequestBody Lugar l){
         return lugarServicio.modificar(l);
     }
 
